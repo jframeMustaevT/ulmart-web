@@ -3,7 +3,7 @@ package ru.itpark.ulmart.domain;
 public class Desktop extends  Product {
     private String color;
     private String memorySpeed;
-    public String hardDrive;
+    private String hardDrive;
 
     public String getColor() {
         return color;
