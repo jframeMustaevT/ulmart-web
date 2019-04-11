@@ -5,22 +5,67 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Ulmart-web</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>Ozon</h1>
+<!--div.container>div.row>div.col-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Ulmart</h1>
 
-<form data-th-action="@{/}" method="get">
-    <input type="search" name="search" data-th-value="${search}"> <!-- ?search=value -->
-</form>
+            <form class="mt-3" data-ah-action="@{/}" method="get">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="search" name="search" data-th-value="${search}"> <!-- ?search=value -->
+                    </div>
+                </div>
+            </form>
 
-<!-- for (Book book: books) { } -->
-<div data-th-each="book : ${books}" data-th-if="${book}">
-    <a data-th-href="@{/view/{id}(id=${book.getId()})}">
-    [[ ${book.getId()} ]] [[ ${book.getTitle()} ]] [[ ${book.getAuthor()} ]]
-    </a>
+            <!-- for (Product product: books) { } -->
+            <ul class="list-group mt-3">
+                <li class="list-group-item" data-th-each="product : ${products}" data-th-if="${product}">
+
+
+                    <div class="card" style="width: 18rem;">
+                        <img  src="..."   class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title" data-th-href="@{/view/{id}(id=${product.getId()})}">[[ ${product.getName()} ]]</h5>
+                            <p class="card-text">[[ ${product.getPrice()} ]] rubles</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" data-th-href="@{/view/{id}(id=${product.getId()})}">Color: [[ ${product.getColor()} ]]</li>
+
+                           <!-- <li class="list-group-item">memorySpeed</li>
+                            <li class="list-group-item">caseSize</li>-->
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">See more product details</a>
+                        </div>
+
+
+
+                    <p data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.IPhone)}">
+
+                    </p>
+                    <p data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.TShirt)}">
+
+                    </p>
+                    <p data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Watch)}">
+
+                    </p>
+                    <p data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Desktop)}">
+
+                    </p>
+
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
 </div>
 
-<a data-th-href="@{/add}">Добавить книгу</a>
 </body>
 </html>
