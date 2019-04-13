@@ -17,4 +17,21 @@ public class ProductController {
     model.addAttribute("products", service.getAll());
     return "index"; // строчка с именем шаблона (без расширения)
   }
-}
+  @GetMapping(params = "search")
+  public  String search(@RequestParam String search, Model model){
+    model.addAttribute("search", search);
+    model.addAttribute("product", service.searchByName(search));
+    return "index";
+
+  }
+
+
+  // TODO:  fixed code
+    @GetMapping("/view/{id}") public String getById ( @PathVariable int id, Model model) {
+    model.addAttribute("product", service.getById(id));
+    return "product";
+
+    }
+  }
+
+

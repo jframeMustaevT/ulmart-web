@@ -4,13 +4,14 @@ import org.springframework.stereotype.Repository;
 import ru.itpark.ulmart.domain.*;
 
 @Repository
-public class ProductRepository { // new BookRepository();
+public class ProductRepository {
   private Product[] items = new Product[10]; // 10 - null
   private int nextIndex = 0;
 
   public ProductRepository() {
     // FIXME: bad hack
     IPhone iPhone = new IPhone();
+    iPhone.setId(1);
     iPhone.setName("iPhone XR новое поступление");
     iPhone.setPrice(64_000);
     iPhone.setModel("XR");
