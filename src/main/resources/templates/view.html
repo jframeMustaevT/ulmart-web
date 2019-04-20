@@ -5,11 +5,84 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Iphone</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 
+<div class="card" style="width: 18rem;" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.IPhone)}">
+    <img src="https://htstatic.imgsmail.ru/pic_image/0cec83c1831b28af3509c5d6bfe01e8a/450/450/1277615/" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Iphone <i class="fas fa-mobile-alt"></i></h5>
+        <p class="card-text">With powerful technology and an intuitive operating system that's easy to use, the iPhone helps you stay connected and engaged with the world around you.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Model:[[ ${product.getModel()} ]]</li>
+        <li class="list-group-item">Color:[[ ${product.getColor()} ]]</li>
+        <li class="list-group-item">MemorySize:[[ ${product.getMemorySize()} ]]</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">See more details</a>
+        <a href="#" class="card-link">Buy now</a>
+    </div>
+</div>
 
+<div class="card" style="width: 18rem;" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.TShirt)}">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81-lgNI3YXL._UL1500_.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-body">TShirt <i class="fas fa-tshirt"></i></h5>
+        <p class="card-text">The Nike rise men's short-sleeve running top is made from lightweight.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">[[ ${product.getName()} ]]</li>
+        <li class="list-group-item">Price: [[ ${product.getPrice()} ]]</li>
+        <li class="list-group-item">Size:[[ ${product.getSize()} ]]</li>
+        <li class="list-group-item">Color:[[ ${product.getColor()} ]]</li>
+        <li class="list-group-item">Material:[[ ${product.getMaterial()} ]]</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">See more details</a>
+        <a href="#" class="card-link">Buy now</a>
+    </div>
+</div>
+
+<div class="card" style="width: 18rem;" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Watch)}" >
+    <img src="https://static.c-store.ru/upload/iblock/d5b/44-alu-space-sport-black-nc-s4-gallery1_geo_ru.jpg"  class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-body">Watch  <i class="fas fa-clock"></i></h5>
+        <p class="card-text">Apple Watch Series 4 (GPS + Cellular) requires an iPhone 6 or later with iOS 12 or later</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">[[${product.getName()}]]</li>
+        <li class="list-group-item">Price:[[${product.getPrice()}]]</li>
+        <li class="list-group-item">CaseSize[[${product.getCaseSize()}]]</li>
+        <li class="list-group-item">Material:[[${product.getCaseMaterial()}]]</li>
+        <li class="list-group-item">Color:[[${product.getColor()}]]</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">See more details</a>
+        <a href="#" class="card-link">Buy now</a>
+    </div>
+</div>
+
+<div class="card" style="width: 18rem;" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Desktop)}">
+    <img src="https://img.macg.co/2018/7/macgpic-1531906629-847804974315064-sc-jpt.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-body">MacBook  <i class="fas fa-laptop"></i></h5>
+        <p class="card-text">The new MacBook Pro is razor-thin, featherlight, and now even faster and more powerful than before.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">[[${product.getName()}]]</li>
+        <li class="list-group-item">Price:[[${product.getPrice()}]]</li>
+        <li class="list-group-item">Color:[[${product.getColor()}]]</li>
+        <li class="list-group-item">MemorySpeed:[[${product.getMemorySpeed()}]]</li>
+        <li class="list-group-item">HardDrive:[[${product.getHardDrive()}]]</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">See more details</a>
+        <a href="#" class="card-link">Buy now</a>
+    </div>
+</div>
 </body>
 </html>

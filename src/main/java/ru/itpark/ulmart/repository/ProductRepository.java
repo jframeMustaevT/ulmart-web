@@ -12,7 +12,7 @@ public class ProductRepository {
     // FIXME: bad hack
     IPhone iPhone = new IPhone();
     iPhone.setId(1);
-    iPhone.setName("iPhone XR новое поступление");
+    iPhone.setName("iPhone XR");
     iPhone.setPrice(64_000);
     iPhone.setModel("XR");
     iPhone.setOs("iOS");
@@ -20,12 +20,15 @@ public class ProductRepository {
     iPhone.setColor("Pink Gold");
 
     TShirt shirt = new TShirt();
+    shirt.setId(2);
     shirt.setName("T-Shirt Nike");
     shirt.setPrice(1_000);
     shirt.setSize(52);
     shirt.setColor("Black");
+    shirt.setMaterial("cotton");
 
     Watch watch = new Watch();
+    watch.setId(3);
     watch.setName("Watch Casio");
     watch.setCaseSize(57);
     watch.setColor("Black");
@@ -33,6 +36,7 @@ public class ProductRepository {
     watch.setPrice(154_000);
 
     Desktop desktop =new Desktop();
+    desktop.setId(4);
     desktop.setName("Laptop Apple ");
     desktop.setPrice(160_000);
     desktop.setColor("White");
