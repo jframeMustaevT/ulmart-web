@@ -3,5 +3,10 @@ jdk: oraclejdk11
 script: mvn -e verify
 deploy:
   provider: heroku
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
   api_key: $HEROKU_KEY
   app: ulmart-web-jframeMustaevT
